@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Học liệu số – Lịch sử và Địa lí 6</title>
+<style>
+:root {
+  --blue:#3157d5;
+  --purple:#7354d8;
+  --green:#22a06b;
+  --red:#df5757;
+  --ink:#202b45;
+  --muted:#667085;
+  --bg:#f4f7ff;
+  --line:#e3e8f4
+}
+* {
+  box-sizing:border-box
+}
+body {
+  margin:0;
+  font-family:Segoe UI,Arial,sans-serif;
+  color:var(--ink);
+  background:linear-gradient(135deg,#f4f8ff,#faf7ff)
+}
+button,input {
+  font:inherit
+}
+button {
+  cursor:pointer
+}
+.top {
+  height:76px;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 30px;
+  position:sticky;
+  top:0;
+  z-index:20
+}
+.brand {
+  display:flex;
+  gap:12px;
+  align-items:center
+}
+.logo {
+  width:48px;
+  height:48px;
+  border-radius:16px;
+  background:#e9efff;
+  display:grid;
+  place-items:center;
+  font-size:26px
+}
+.bt {
+  font-weight:900;
+  color:#29458f
+}
+.bs {
+  font-size:12px;
+  color:#71809c
+}
+.user {
+  display:flex;
+  gap:10px;
+  align-items:center
+}
+.chip {
+  padding:9px 13px;
+  border-radius:999px;
+  background:#f0f3ff;
+  font-size:13px;
+  font-weight:700
+}
+.home {
+  border:0;
+  background:var(--blue);
+  color:#fff;
+  padding:10px 15px;
+  border-radius:11px;
+  font-weight:800
+}
+#app {
+  min-height:calc(100vh - 76px)
+}
+.page {
+  max-width:1200px;
+  margin:auto;
+  padding:35px 22px 60px
+}
+/* ===== MÀN HÌNH ĐĂNG NHẬP ===== */
+body.login-mode {
+  background:linear-gradient(135deg,#f3f5ff 0%,#f7f5ff 52%,#f2f5ff 100%)
+}
+body.login-mode #app {
+  min-height:100vh
+}
+body.login-mode .top,
+body.login-mode footer {
+  display:none
+}
+.login {
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  padding:38px 20px
+}
+.loginbox {
+  width:min(575px,100%);
+  background:#fff;
+  border:1px solid #dfe5f2;
+  border-radius:34px;
+  padding:47px 48px 48px;
+  box-shadow:0 18px 48px rgba(48,67,120,.12)
+}
+.loginlogo {
+  width:98px;
+  height:98px;
+  margin:0 auto 27px;
+  border-radius:31px;
+  background:#e4e8ff;
+  display:grid;
+  place-items:center;
+  font-size:48px;
+  box-shadow:inset 0 0 0 1px rgba(49,87,213,.03)
+}
+.loginbox h1 {
+  text-align:center;
+  margin:0 0 10px;
+  color:#14264b;
+  font-size:40px;
+  line-height:1.15;
+  letter-spacing:-.7px
+}
+.loginbox p {
+  max-width:470px;
+  margin:0 auto 34px;
+  text-align:center;
+  color:#65718a;
+  font-size:18px;
+  line-height:1.5
+}
+.field {
+  margin:0 0 19px
+}
+.field label {
+  display:block;
+  font-size:16px;
+  font-weight:900;
+  color:#14264b;
+  margin:0 0 9px
+}
+.field input {
+  width:100%;
+  height:62px;
+  padding:0 17px;
+  border:1px solid #d3dced;
+  border-radius:15px;
+  outline:0;
+  background:#fbfcff;
+  color:#24334f;
+  font-size:18px;
+  transition:.18s
+}
+.field input::placeholder {
+  color:#707d96;
+  opacity:1
+}
+.field input:focus {
+  border-color:#6078df;
+  box-shadow:0 0 0 4px rgba(49,87,213,.10);
+  background:#fff
+}
+.primary {
+  width:100%;
+  height:60px;
+  border:0;
+  background:linear-gradient(135deg,#3157d5,#7354d8);
+  color:#fff;
+  border-radius:15px;
+  padding:0 18px;
+  font-size:18px;
+  font-weight:900;
+  box-shadow:0 9px 20px rgba(65,75,205,.18);
+  transition:.18s
+}
+.primary:hover {
+  transform:translateY(-1px);
+  box-shadow:0 12px 24px rgba(65,75,205,.24)
+}
+.primary:active {
+  transform:translateY(0)
+}
+@media(max-width:650px) {
+  .login {
+    padding:24px 14px
+  }
+  .loginbox {
+    padding:34px 24px 28px;
+    border-radius:27px
+  }
+  .loginlogo {
+    width:82px;
+    height:82px;
+    border-radius:26px;
+    font-size:42px;
+    margin-bottom:22px
+  }
+  .loginbox h1 {
+    font-size:32px
+  }
+  .loginbox p {
+    font-size:16px;
+    margin-bottom:27px
+  }
+}
+.hero {
+  background:linear-gradient(135deg,#e8f0ff,#f1ebff);
+  border:1px solid #dce5ff;
+  border-radius:28px;
+  padding:38px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 12px 35px #40508016
+}
+.hero h1 {
+  font-size:33px;
+  margin:0 0 12px
+}
+.hero p {
+  max-width:720px;
+  color:#5d6981;
+  line-height:1.7;
+  margin:0
+}
+.orb {
+  width:145px;
+  height:145px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:70px;
+  background:radial-gradient(circle at 35% 30%,#fff,#dce7ff 60%,#c5d3ff);
+  box-shadow:0 18px 40px #526bb044
+}
+.stats {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin:21px 0
+}
+.stat,.card,.panel {
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:20px;
+  box-shadow:0 8px 25px #4050800c
+}
+.stat {
+  padding:18px
+}
+.stat strong {
+  font-size:25px;
+  display:block
+}
+.stat span {
+  font-size:12px;
+  color:var(--muted);
+  font-weight:800
+}
+.cards {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px
+}
+.card {
+  padding:27px;
+  transition:.2s
+}
+.card:hover {
+  transform:translateY(-4px)
+}
+.card.home-clickable {
+  cursor:pointer;
+  outline:none
+}
+.card.home-clickable:focus-visible {
+  outline:3px solid rgba(49,87,213,.35);
+  outline-offset:4px
+}
+.card.home-clickable button {
+  position:relative;
+  z-index:2
+}
+.ico {
+  width:64px;
+  height:64px;
+  border-radius:19px;
+  display:grid;
+  place-items:center;
+  font-size:31px;
+  background:#edf2ff;
+  margin-bottom:15px
+}
+.card h2 {
+  margin:0 0 9px
+}
+.card p {
+  color:var(--muted);
+  line-height:1.6;
+  min-height:65px
+}
+.card button,.action {
+  border:0;
+  border-radius:11px;
+  padding:11px 15px;
+  font-weight:900
+}
+.history .ico {
+  background:#fff0df
+}
+.geo .ico {
+  background:#e3f8ed
+}
+.games .ico {
+  background:#eee7ff
+}
+.history button {
+  background:#d97706;
+  color:#fff
+}
+.geo button {
+  background:#16865a;
+  color:#fff
+}
+.games button {
+  background:#6845c7;
+  color:#fff
+}
+.head {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:15px;
+  margin-bottom:20px
+}
+.head h1 {
+  margin:0;
+  font-size:30px
+}
+.head p {
+  margin:7px 0 0;
+  color:var(--muted)
+}
+.back {
+  border:1px solid var(--line);
+  background:#fff;
+  padding:10px 14px;
+  border-radius:11px;
+  font-weight:800
+}
+.chapter {
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:19px;
+  overflow:hidden;
+  margin-bottom:16px;
+  box-shadow:0 7px 23px #4050800b
+}
+.chhead {
+  padding:17px 19px;
+  background:#f8f9ff;
+  font-weight:900;
+  display:flex;
+  justify-content:space-between
+}
+.lessons {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  padding:14px
+}
+.lesson {
+  border:1px solid #e1e6f2;
+  background:#fff;
+  border-radius:13px;
+  padding:14px;
+  text-align:left;
+  display:flex;
+  gap:10px;
+  align-items:flex-start
+}
+.lesson:hover {
+  background:#f7f9ff;
+  border-color:#9eaff0
+}
+.num {
+  width:33px;
+  height:33px;
+  flex:none;
+  border-radius:9px;
+  background:#edf1ff;
+  color:#3854b7;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:12px
+}
+.lname {
+  font-weight:750;
+  line-height:1.4;
+  font-size:14px
+}
+.done {
+  margin-left:auto;
+  color:var(--green);
+  font-weight:900
+}
+.lessonhead {
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:23px;
+  padding:27px;
+  box-shadow:0 10px 30px #40508010;
+  margin-bottom:19px
+}
+.tag {
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  background:#edf1ff;
+  color:#3854b7;
+  font-size:12px;
+  font-weight:900
+}
+.lessonhead h1 {
+  font-size:29px;
+  margin:12px 0 8px
+}
+.lessonhead p {
+  color:var(--muted);
+  margin:0
+}
+.layout {
+  display:grid;
+  grid-template-columns:1.7fr 1fr;
+  gap:19px
+}
+.panel {
+  padding:22px;
+  margin-bottom:18px
+}
+.panel h2 {
+  font-size:19px;
+  margin:0 0 14px
+}
+.goals {
+  padding-left:20px;
+  line-height:1.75
+}
+.section {
+  padding:13px 0;
+  border-top:1px solid #edf0f5
+}
+.section:first-of-type {
+  border-top:0
+}
+.section h3 {
+  margin:0 0 7px;
+  font-size:16px
+}
+.section p {
+  margin:0;
+  color:#566177;
+  line-height:1.75
+}
+.media {
+  height:220px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#e9f1ff,#f1ebff);
+  display:grid;
+  place-items:center;
+  font-size:78px;
+  overflow:hidden
+}
+.resource {
+  margin-top:12px;
+  background:#fafbff;
+  border:1px solid #e6eaf3;
+  border-radius:13px;
+  padding:13px;
+  line-height:1.5
+}
+.resource small {
+  display:block;
+  color:var(--muted);
+  margin-top:4px
+}
+.model {
+  height:275px;
+  border-radius:16px;
+  background:#101a36;
+  color:#fff;
+  display:grid;
+  place-items:center;
+  position:relative;
+  overflow:hidden
+}
+.earth {
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#7fe4ff,#2879db 45%,#153d8b 75%);
+  box-shadow:0 0 45px #4ca1ff66;
+  animation:float 4s ease-in-out infinite
+}
+.earth:after {
+  content:"";
+  position:absolute;
+  width:75px;
+  height:45px;
+  left:35px;
+  top:35px;
+  background:#52c777;
+  border-radius:50% 35% 60% 40%;
+  transform:rotate(-25deg)
+}
+.layers {
+  width:155px;
+  height:155px;
+  border-radius:50%;
+  background:radial-gradient(circle,#d94d4d 0 30%,#ee9849 31% 60%,#f4d58e 61% 76%,#69b9e9 77%)
+}
+@keyframes float {
+  50% {
+    transform:translateY(-9px) rotate(4deg)
+  }
+}
+.caption {
+  position:absolute;
+  bottom:11px;
+  left:12px;
+  right:12px;
+  text-align:center;
+  font-size:12px;
+  color:#cbd6f4
+}
+.actionrow {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap
+}
+.primary2 {
+  background:var(--blue);
+  color:#fff
+}
+.light {
+  background:#eef2ff;
+  color:#3550a8
+}
+.quizq {
+  font-weight:900;
+  line-height:1.5;
+  margin:14px 0 9px
+}
+.opt {
+  display:block;
+  width:100%;
+  text-align:left;
+  border:1px solid #dfe5f0;
+  background:#fff;
+  border-radius:10px;
+  padding:11px 13px;
+  margin:7px 0
+}
+.opt.correct {
+  background:#d9f6e7;
+  border-color:#46b47b;
+  color:#176540
+}
+.opt.wrong {
+  background:#ffe0e0;
+  border-color:#e37676;
+  color:#8d2f2f
+}
+.explain {
+  background:#f3f6ff;
+  border-radius:10px;
+  padding:10px;
+  font-size:13px;
+  color:#56647d;
+  margin-top:8px
+}
+.games-tabs {
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-bottom:17px
+}
+.tab {
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:11px;
+  padding:10px 14px;
+  font-weight:900
+}
+.tab.active {
+  background:#6845c7;
+  color:#fff;
+  border-color:#6845c7
+}
+.matchgrid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px
+}
+.mcard {
+  min-height:105px;
+  border:2px solid #e0e5f1;
+  background:#fff;
+  border-radius:15px;
+  padding:12px;
+  font-weight:900
+}
+.mcard.selected {
+  border-color:#7354d8;
+  background:#eee8ff
+}
+.mcard.matched {
+  border-color:#29a86c;
+  background:#d9f6e7;
+  color:#176540
+}
+.mcard.wrong {
+  border-color:#df5757;
+  background:#ffe0e0;
+  color:#8d2f2f
+}
+.timeline {
+  display:grid;
+  gap:12px
+}
+.time {
+  display:grid;
+  grid-template-columns:100px 1fr;
+  gap:13px
+}
+.year {
+  background:#edf1ff;
+  color:#3655b7;
+  border-radius:10px;
+  padding:9px;
+  text-align:center;
+  font-weight:900
+}
+.ttext {
+  background:#fafbff;
+  border:1px solid #e6eaf2;
+  border-radius:11px;
+  padding:11px;
+  line-height:1.5
+}
+.progress {
+  height:9px;
+  background:#edf0f6;
+  border-radius:99px;
+  overflow:hidden;
+  margin-top:8px
+}
+.progress i {
+  display:block;
+  height:100%;
+  background:linear-gradient(90deg,var(--blue),#8a62df)
+}
+/* ===== GIAO DIỆN TRANG DANH SÁCH BÀI HỌC ===== */
+.subject-page {
+  max-width:none;
+  position:relative;
+  min-height:calc(100vh - 76px);
+  overflow:hidden
+}
+.subject-page .subject-inner {
+  max-width:1200px;
+  margin:auto;
+  position:relative;
+  z-index:1
+}
+.subject-page.history-theme {
+  background:
+ radial-gradient(circle at 8% 12%,rgba(164,105,44,.15),transparent 25%),
+ radial-gradient(circle at 92% 82%,rgba(125,72,31,.10),transparent 28%),
+ repeating-linear-gradient(0deg,rgba(117,78,38,.035) 0 1px,transparent 1px 8px),
+ linear-gradient(135deg,#fffaf1 0%,#f8efe0 48%,#fffaf4 100%)
+}
+.subject-page.geo-theme {
+  background:
+ radial-gradient(circle at 12% 18%,rgba(28,146,177,.18),transparent 25%),
+ radial-gradient(circle at 90% 78%,rgba(36,181,130,.16),transparent 30%),
+ repeating-linear-gradient(0deg,transparent 0 24px,rgba(31,126,155,.045) 25px),
+ repeating-linear-gradient(90deg,transparent 0 24px,rgba(31,126,155,.035) 25px),
+ linear-gradient(135deg,#effcff 0%,#eaf8f4 50%,#f3fbff 100%)
+}
+.subject-page.history-theme .head h1 {
+  color:#70451f
+}
+.subject-page.history-theme .head p {
+  color:#7c654e
+}
+.subject-page.history-theme .chapter {
+  border-color:#e7d3b7;
+  box-shadow:0 10px 28px rgba(102,69,31,.10)
+}
+.subject-page.history-theme .chhead {
+  background:linear-gradient(90deg,#f7e8d0,#fff8ed);
+  color:#70451f
+}
+.subject-page.history-theme .lesson {
+  border-color:#eadbc6;
+  background:rgba(255,252,247,.94)
+}
+.subject-page.history-theme .lesson:hover {
+  background:#fff3df;
+  border-color:#c99b63
+}
+.subject-page.history-theme .num {
+  background:#f3e2c7;
+  color:#80501f
+}
+.subject-page.geo-theme .head h1 {
+  color:#08758b
+}
+.subject-page.geo-theme .head p {
+  color:#50737b
+}
+.subject-page.geo-theme .chapter {
+  border-color:#cce9e4;
+  box-shadow:0 10px 28px rgba(20,113,125,.10)
+}
+.subject-page.geo-theme .chhead {
+  background:linear-gradient(90deg,#dff6f1,#edfaff);
+  color:#08758b
+}
+.subject-page.geo-theme .lesson {
+  border-color:#d3e9eb;
+  background:rgba(250,255,255,.95)
+}
+.subject-page.geo-theme .lesson:hover {
+  background:#e8fbf7;
+  border-color:#65b9b2
+}
+.subject-page.geo-theme .num {
+  background:#dff3f2;
+  color:#08758b
+}
+/* ===== THANH TÌM KIẾM ===== */
+
+.search-box{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:12px;
+  align-items:center;
+  margin:18px 0 8px;
+}
+
+.search-input-wrap{
+  position:relative;
+  width:100%;
+}
+
+.search-input-wrap .search{
+  width:100%;
+  height:50px;
+  padding:0 55px 0 50px;
+  margin:0;
+  border:1px solid #d6deee;
+  border-radius:16px;
+  background:#fbfcff;
+  color:#566177;
+  font-size:17px;
+  outline:none;
+  box-shadow:0 2px 7px rgba(50,70,110,.04);
+}
+
+.search-input-wrap .search::placeholder{
+  color:#68758c;
+  opacity:1;
+}
+
+.search-input-wrap .search:focus{
+  border-color:#9eb4e8;
+  box-shadow:0 0 0 3px rgba(49,87,213,.08);
+}
+
+/* Nút X bên phải ô tìm kiếm */
+.search-clear{
+  position:absolute;
+  right:11px;
+  top:50%;
+  transform:translateY(-50%);
+  width:39px;
+  height:39px;
+  border:0;
+  border-radius:11px;
+  background:#eef1f7;
+  color:#667085;
+  font-size:18px;
+  font-weight:900;
+  display:grid;
+  place-items:center;
+  transition:.15s;
+}
+
+.search-clear:hover{
+  background:#e1e6f1;
+}
+
+/* Nút Tìm kiếm màu cam */
+.search-submit{
+  height:60px;
+  border:0;
+  border-radius:16px;
+  padding:0 26px;
+  background:linear-gradient(135deg,#a96521,#c98232);
+  color:#fff;
+  font-size:17px;
+  font-weight:900;
+  white-space:nowrap;
+  box-shadow:0 7px 18px rgba(150,90,30,.18);
+  transition:.15s;
+}
+
+.search-submit:hover{
+  transform:translateY(-1px);
+  box-shadow:0 10px 22px rgba(150,90,30,.22);
+}
+
+.search-note{
+  font-size:13px;
+  color:#766b5d;
+  margin:7px 0 17px;
+  padding-left:5px;
+}
+
+/* Mobile */
+@media(max-width:700px){
+  .search-box{
+    grid-template-columns:1fr;
+  }
+
+  .search-submit{
+    width:100%;
+  }
+}
+.history-theme .search-submit {
+  background:linear-gradient(135deg,#9b5b21,#c88439)
+}
+.geo-theme .search-submit {
+  background:linear-gradient(135deg,#087b91,#20a77e)
+}
+.search-note {
+  font-size:13px;
+  color:#667085;
+  margin:-4px 0 15px
+}
+.search-result-title {
+  font-weight:900;
+  margin-bottom:12px
+}
+.no-result {
+  padding:25px;
+  text-align:center;
+  background:rgba(255,255,255,.78);
+  border:1px dashed #cbd3e3;
+  border-radius:16px;
+  color:#667085
+}
+@media(max-width:650px) {
+  .search-box {
+    grid-template-columns:1fr auto
+  }
+  .search-submit {
+    grid-column:1/-1;
+    width:100%
+  }
+}
+.toast {
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#202b45;
+  color:#fff;
+  padding:13px 16px;
+  border-radius:11px;
+  z-index:80;
+  opacity:0;
+  transform:translateY(12px);
+  transition:.2s;
+  pointer-events:none
+}
+.toast.show {
+  opacity:1;
+  transform:none
+}
+.modal {
+  position:fixed;
+  inset:0;
+  background:#17213b88;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  z-index:70
+}
+.modal.open {
+  display:flex
+}
+.modalbox {
+  width:min(540px,100%);
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden
+}
+.modalhead {
+  padding:17px 20px;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  justify-content:space-between
+}
+.modalhead h3 {
+  margin:0
+}
+.close {
+  border:0;
+  background:#f0f2f7;
+  border-radius:9px;
+  width:34px;
+  height:34px;
+  font-size:20px
+}
+.modalbody {
+  padding:20px;
+  color:#566177;
+  line-height:1.7
+}
+footer {
+  text-align:center;
+  color:#8792a9;
+  font-size:12px;
+  padding:22px
+}
+.lesson-page.history-theme {
+  background:
+ radial-gradient(circle at 8% 10%,rgba(164,105,44,.12),transparent 25%),
+ repeating-linear-gradient(0deg,rgba(117,78,38,.025) 0 1px,transparent 1px 9px),
+ linear-gradient(135deg,#fffaf2,#f7efe2 55%,#fffaf6)
+}
+.lesson-page.geo-theme {
+  background:
+ radial-gradient(circle at 10% 15%,rgba(28,146,177,.13),transparent 25%),
+ radial-gradient(circle at 90% 80%,rgba(36,181,130,.12),transparent 30%),
+ linear-gradient(135deg,#effcff,#edf9f5 55%,#f4fcff)
+}
+.lesson-page.history-theme .lessonhead {
+  border-color:#e7d3b7
+}
+.lesson-page.geo-theme .lessonhead {
+  border-color:#cce9e4
+}
+@media(max-width:900px) {
+  .cards,.stats {
+    grid-template-columns:1fr 1fr
+  }
+  .layout {
+    grid-template-columns:1fr
+  }
+  .orb {
+    display:none
+  }
+}
+@media(max-width:650px) {
+  .top {
+    padding:0 14px
+  }
+  .chip {
+    display:none
+  }
+  .page {
+    padding:25px 14px
+  }
+  .cards,.stats,.lessons {
+    grid-template-columns:1fr
+  }
+  .matchgrid {
+    grid-template-columns:repeat(2,1fr)
+  }
+  .time {
+    grid-template-columns:1fr
+  }
+}
+</style>
+</head>
+<body>
+<header class="top">
+ <div class="brand"><div class="logo">🌍</div><div><div class="bt">HỌC LIỆU SỐ</div><div class="bs">Lịch sử & Địa lí 6</div></div></div>
+ <div class="user"><div class="chip" id="userChip">Khách tham quan</div><button class="home" onclick="goHome()">Trang chủ</button></div>
+</header>
+<main id="app"></main>
+<div class="toast" id="toast"></div>
+<div class="modal" id="modal"><div class="modalbox"><div class="modalhead"><h3 id="modalTitle">Thông báo</h3><button class="close" onclick="closeModal()">×</button></div><div class="modalbody" id="modalBody"></div></div></div>
+<footer>Học liệu số – Lịch sử và Địa lí 6</footer>
+<script>
+/* =========================================================
+   KHU VỰC NỘI DUNG: BẠN CÓ THỂ CHỈNH TỪNG BÀI Ở ĐÂY.
+   Không cần sửa phần giao diện phía dưới.
+   ========================================================= */
+const HISTORY=[
+['Chương 1. Vì sao phải học lịch sử',['Bài 1. Lịch sử và cuộc sống','Bài 2. Dựa vào đâu để biết và phục dựng lại lịch sử?','Bài 3. Thời gian trong lịch sử']],
+['Chương 2. Xã hội nguyên thủy',['Bài 4. Nguồn gốc loài người','Bài 5. Xã hội nguyên thủy','Bài 6. Sự chuyển biến và phân hóa của xã hội nguyên thủy']],
+['Chương 3. Xã hội cổ đại',['Bài 7. Ai Cập và Lưỡng Hà cổ đại','Bài 8. Ấn Độ cổ đại','Bài 9. Trung Quốc từ thời cổ đại đến thế kỉ VII','Bài 10. Hy Lạp và La Mã cổ đại']],
+['Chương 4. Đông Nam Á từ những thế kỉ tiếp giáp đầu Công nguyên đến thế kỉ X',['Bài 11. Các quốc gia sơ kì ở Đông Nam Á','Bài 12. Sự hình thành và bước đầu phát triển của các vương quốc phong kiến ở Đông Nam Á','Bài 13. Giao lưu văn hóa ở Đông Nam Á từ đầu Công nguyên đến thế kỉ X']],
+['Chương 5. Việt Nam từ khoảng thế kỉ VII TCN đến đầu thế kỉ X',['Bài 14. Nhà nước Văn Lang - Âu Lạc','Bài 15. Chính sách cai trị của các triều đại phong kiến phương Bắc và sự chuyển biến của xã hội Âu Lạc','Bài 16. Các cuộc khởi nghĩa tiêu biểu giành độc lập trước thế kỉ X','Bài 17. Cuộc đấu tranh bảo tồn và phát triển văn hóa dân tộc của người Việt','Bài 18. Bước ngoặt lịch sử đầu thế kỉ X','Bài 19. Vương quốc Chăm-pa từ thế kỉ II đến thế kỉ X','Bài 20. Vương quốc Phù Nam']]
+];
+const GEOGRAPHY=[
+['Chương 1. Bản đồ - phương tiện thể hiện bề mặt Trái Đất',['Bài 1. Hệ thống kinh, vĩ tuyến. Tọa độ địa lí','Bài 2. Bản đồ. Một số lưới kinh, vĩ tuyến. Phương hướng trên bản đồ','Bài 3. Tỉ lệ bản đồ. Tính khoảng cách thực tế dựa vào tỉ lệ bản đồ','Bài 4. Kí hiệu và bảng chú giải bản đồ. Tìm đường đi trên bản đồ','Bài 5. Lược đồ trí nhớ']],
+['Chương 2. Trái Đất - Hành tinh của hệ Mặt Trời',['Bài 6. Trái Đất trong hệ Mặt Trời','Bài 7. Chuyển động tự quay quanh trục của Trái Đất và hệ quả','Bài 8. Chuyển động của Trái Đất quanh Mặt Trời và hệ quả','Bài 9. Xác định phương hướng ngoài thực địa']],
+['Chương 3. Cấu tạo của Trái Đất. Vỏ Trái Đất',['Bài 10. Cấu tạo của Trái Đất. Các mảng kiến tạo','Bài 11. Quá trình nội sinh và quá trình ngoại sinh. Hiện tượng tạo núi','Bài 12. Núi lửa và động đất','Bài 13. Các dạng địa hình chính trên Trái Đất. Khoáng sản','Bài 14. Thực hành: Đọc lược đồ địa hình tỉ lệ lớn và lát cắt địa hình đơn giản']],
+['Chương 4. Khí hậu và biến đổi khí hậu',['Bài 15. Lớp vỏ khí của Trái Đất. Khí áp và gió','Bài 16. Nhiệt độ không khí. Mây và mưa','Bài 17. Thời tiết và khí hậu. Biến đổi khí hậu','Bài 18. Thực hành: Phân tích biểu đồ nhiệt độ, lượng mưa']],
+['Chương 5. Nước trên Trái Đất',['Bài 19. Thủy quyển và vòng tuần hoàn lớn của nước','Bài 20. Sông và hồ. Nước ngầm và băng hà','Bài 21. Biển và đại dương']],
+['Chương 6. Đất và sinh vật trên Trái Đất',['Bài 22. Lớp đất trên Trái Đất','Bài 23. Sự sống trên Trái Đất','Bài 24. Rừng nhiệt đới','Bài 25. Sự phân bố các đới thiên nhiên trên Trái Đất','Bài 26. Thực hành: Tìm hiểu môi trường tự nhiên địa phương']],
+['Chương 7. Con người và thiên nhiên',['Bài 27. Dân số và sự phân bố dân cư trên thế giới','Bài 28. Mối quan hệ giữa con người và thiên nhiên','Bài 29. Bảo vệ tự nhiên và khai thác thông minh các tài nguyên thiên nhiên vì sự phát triển bền vững','Bài 30. Thực hành: Tìm hiểu mối quan hệ giữa con người và thiên nhiên ở địa phương']]
+];
+const CONTENT= {
+  'h01':{
+  goals:[
+    'Nêu được khái niệm lịch sử và môn Lịch sử.',
+    'Hiểu lịch sử là những gì đã diễn ra trong quá khứ.',
+    'Giải thích được vì sao cần học Lịch sử.',
+    'Biết liên hệ việc học Lịch sử với cội nguồn của bản thân, gia đình và dân tộc.'
+  ],
+
+  sections:[
+    [
+      '🔎 1. Lịch sử là gì?',
+      'Lịch sử là tất cả những gì đã diễn ra trong quá khứ của con người và xã hội loài người. Lịch sử cũng được hiểu là một ngành khoa học nghiên cứu và phục dựng lại quá khứ dựa trên các nguồn tư liệu.'
+    ],
+
+    [
+      '📚 2. Môn Lịch sử là gì?',
+      'Môn Lịch sử tìm hiểu quá trình hình thành và phát triển của xã hội loài người, từ khi con người xuất hiện trên Trái Đất cho đến ngày nay.'
+    ],
+
+    [
+      '💻 3. Nhìn sự thay đổi để hiểu lịch sử',
+      'Sự thay đổi của máy tính điện tử qua các thời kì cho thấy mọi sự vật và xã hội đều vận động theo thời gian. Từ những máy tính rất lớn như ENIAC đến máy tính xách tay hiện nay, con người đã tạo ra nhiều thay đổi về công nghệ.'
+    ],
+
+    [
+      '🌱 4. Vì sao phải học Lịch sử?',
+      'Học Lịch sử giúp chúng ta hiểu về quá khứ, biết nguồn gốc và cội nguồn của bản thân, gia đình, dòng họ, quê hương, đất nước và nhân loại. Qua đó, mỗi người có thể trân trọng những giá trị được hình thành trong quá khứ và hiểu hơn về cuộc sống hiện tại.'
+    ],
+
+    [
+      '💡 Ghi nhớ',
+      'Lịch sử là những gì đã diễn ra trong quá khứ; môn Lịch sử giúp con người tìm hiểu quá trình hình thành và phát triển của xã hội loài người. Học Lịch sử giúp chúng ta hiểu cội nguồn và những giá trị của quá khứ.'
+    ]
+  ],
+
+  resource:
+    'Hình ảnh ENIAC, hình ảnh một tác phẩm lịch sử và hiện vật trống đồng Đông Sơn.',
+
+  quiz:[
+    'Theo nội dung bài học, vì sao chúng ta cần học Lịch sử?',
+    [
+      'Để hiểu quá khứ, cội nguồn và quá trình phát triển của con người và xã hội',
+      'Để dự đoán chính xác mọi sự kiện trong tương lai',
+      'Để chỉ ghi nhớ tên và năm của các sự kiện',
+      'Để thay thế hoàn toàn việc tìm hiểu các môn học khác'
+    ],
+    0
+  ]
+},
+  'h02': {
+    goals:['Phân biệt một số loại tư liệu lịch sử.','Biết khai thác giá trị của tư liệu.'],sections:[['Các loại tư liệu','Tư liệu có thể gồm truyền miệng, hiện vật, chữ viết và hình ảnh.'],['Khai thác tư liệu','Cần xem xét nguồn gốc, nội dung và đối chiếu khi sử dụng tư liệu.']],resource:'Hiện vật, hình ảnh và bản đồ lịch sử.',quiz:['Di tích và hiện vật thuộc loại tư liệu nào?',['Tư liệu hiện vật','Tư liệu truyền miệng','Tư liệu khí hậu','Tư liệu dự báo'],0]
+  }
+  ,
+  'h03': {
+    goals:['Biết cách xác định thời gian trong lịch sử.','Đọc được dòng thời gian đơn giản.'],sections:[['Thời gian lịch sử','Thời gian giúp xác định khi nào sự kiện diễn ra và quan hệ trước – sau.'],['Dòng thời gian','Dòng thời gian giúp sắp xếp sự kiện theo trình tự.']],resource:'Dòng thời gian tương tác.'
+  }
+  ,
+  'h07': {
+    goals:['Trình bày khái quát Ai Cập và Lưỡng Hà cổ đại.'],sections:[['Các nền văn minh ven sông','Ai Cập gắn với sông Nin; Lưỡng Hà gắn với sông Ti-grơ và Ơ-phơ-rát. Điều kiện tự nhiên góp phần thúc đẩy sản xuất và hình thành nhà nước.']],resource:'Hình ảnh kim tự tháp, chữ viết và bản đồ khu vực.'
+  }
+  ,
+  'h14': {
+    goals:['Trình bày những nét chính về Văn Lang – Âu Lạc.','Nhận biết một số thành tựu văn hóa.'],sections:[['Văn Lang – Âu Lạc','Nhà nước hình thành trong bối cảnh xã hội có những chuyển biến về sản xuất và tổ chức cộng đồng. Văn hóa Đông Sơn để lại nhiều dấu tích, tiêu biểu là trống đồng.']],resource:'Bản đồ, trống đồng và sơ đồ tổ chức nhà nước.'
+  }
+  ,
+  'h16': {
+    goals:['Lập sơ đồ các cuộc khởi nghĩa tiêu biểu trước thế kỉ X.','Trình bày nguyên nhân, diễn biến chính và ý nghĩa.'],sections:[['Các cuộc khởi nghĩa tiêu biểu','Hai Bà Trưng, Bà Triệu, Lý Bí, Mai Thúc Loan và Phùng Hưng là những cuộc đấu tranh tiêu biểu thể hiện ý chí giành và giữ quyền tự chủ.']],resource:'Dòng thời gian 5 cuộc khởi nghĩa.',quiz:['Cuộc khởi nghĩa nào diễn ra vào năm 40?',['Hai Bà Trưng','Bà Triệu','Lý Bí','Phùng Hưng'],0]
+  }
+  ,
+  'h18': {
+    goals:['Trình bày những sự kiện chính tạo nên bước ngoặt đầu thế kỉ X.'],sections:[['Bước ngoặt lịch sử','Hoạt động của họ Khúc, Dương Đình Nghệ và chiến thắng Bạch Đằng năm 938 của Ngô Quyền tạo nên bước chuyển quan trọng.']],resource:'Timeline và bản đồ Bạch Đằng.'
+  }
+  ,
+  'h19': {
+    goals:['Trình bày khái quát Vương quốc Chăm-pa.','Nhận biết một số thành tựu văn hóa.'],sections:[['Vương quốc Chăm-pa','Chăm-pa phát triển ở khu vực miền Trung và một phần phía Nam Việt Nam ngày nay; có hoạt động nông nghiệp, thương mại và giao lưu văn hóa.']],resource:'Bản đồ Chăm-pa và hình ảnh tháp Chăm.'
+  }
+  ,
+  'g06': {
+    goals:['Xác định vị trí Trái Đất trong hệ Mặt Trời.','Nhận biết một số đặc điểm cơ bản của Trái Đất.'],sections:[['Trái Đất trong hệ Mặt Trời','Trái Đất là một hành tinh chuyển động quanh Mặt Trời. Điều kiện tự nhiên của Trái Đất tạo môi trường thuận lợi cho sự sống.']],resource:'Mô hình Hệ Mặt Trời.'
+  }
+  ,
+  'g07': {
+    goals:['Mô tả chuyển động tự quay của Trái Đất.','Giải thích sự luân phiên ngày và đêm.'],sections:[['Trái Đất tự quay','Trái Đất tự quay quanh trục theo hướng từ tây sang đông. Chuyển động này tạo nên sự luân phiên ngày và đêm.']],resource:'Mô hình Trái Đất tự quay.'
+  }
+  ,
+  'g08': {
+    goals:['Mô tả chuyển động của Trái Đất quanh Mặt Trời.','Giải thích khái quát sự thay đổi mùa.'],sections:[['Trái Đất quanh Mặt Trời','Trái Đất chuyển động quanh Mặt Trời; kết hợp với trục nghiêng và giữ nguyên hướng trong không gian tạo nên sự thay đổi mùa.']],resource:'Mô hình quỹ đạo quanh Mặt Trời.'
+  }
+  ,
+  'g10': {
+    goals:['Nêu ba lớp cấu tạo chính của Trái Đất.','Nhận biết khái quát các mảng kiến tạo.'],sections:[['Cấu tạo Trái Đất','Trái Đất gồm vỏ, man-ti và nhân. Vỏ Trái Đất cùng phần trên của man-ti tạo thành các mảng kiến tạo.']],resource:'Mô hình cắt lớp Trái Đất.'
+  }
+  ,
+  'g12': {
+    goals:['Nêu nguyên nhân khái quát của động đất và núi lửa.'],sections:[['Núi lửa và động đất','Núi lửa và động đất thường liên quan đến hoạt động bên trong Trái Đất và vận động của các mảng kiến tạo.']],resource:'Mô phỏng núi lửa và chấn động.'
+  }
+  ,
+  'g19': {
+    goals:['Nêu khái niệm thủy quyển.','Mô tả vòng tuần hoàn lớn của nước.'],sections:[['Thủy quyển','Thủy quyển gồm toàn bộ nước trên Trái Đất. Nước liên tục vận động qua bốc hơi, ngưng tụ, mưa và dòng chảy.']],resource:'Mô hình vòng tuần hoàn nước.'
+  }
+  ,
+  'g24': {
+    goals:['Nêu đặc điểm cơ bản của rừng nhiệt đới.','Nhận biết giá trị của rừng.'],sections:[['Rừng nhiệt đới','Rừng nhiệt đới thường có nền nhiệt cao, lượng mưa lớn và sinh vật phong phú; có vai trò quan trọng với đa dạng sinh học và môi trường.']],resource:'Hình ảnh rừng nhiệt đới và sơ đồ tầng rừng.'
+  }
+  ,
+  'g29': {
+    goals:['Hiểu ý nghĩa của bảo vệ tự nhiên.','Nhận biết nguyên tắc khai thác hợp lí tài nguyên.'],sections:[['Phát triển bền vững','Bảo vệ tự nhiên và sử dụng tài nguyên hợp lí giúp đáp ứng nhu cầu hiện tại mà vẫn giữ gìn điều kiện cho các thế hệ sau.']],resource:'Infographic phát triển bền vững.'
+  }
+}
+;
+const state= {
+  page:localStorage.getItem('hls6_user')?'home':'login',subject:null,lesson:null,search:'',game:'match',user:localStorage.getItem('hls6_user')||''
+}
+;
+let match= {
+  cards:[],selected:[],locked:false
+}
+;
+function esc(s) {
+  return String(s).replace(/[&<>"']/g,m=>( {
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
+  }
+  [m]))
+}
+function list(sub) {
+  return sub==='history'?HISTORY:GEOGRAPHY
+}
+function all() {
+  return [...HISTORY,...GEOGRAPHY]
+}
+function find(id) {
+  for(const [ch,ls] of all()) {
+    const i=ls.findIndex(x=>x.toLowerCase().startsWith('bài')&&x.includes(id));
+  }
+  return null
+}
+function info(id) {
+  let n=0;
+  for(const [ch,ls] of HISTORY) {
+    for(const title of ls) {
+      n++;
+      if(id==='h'+String(n).padStart(2,'0'))return {
+        id,title,chapter:ch,subject:'history'
+      }
+    }
+  }
+  n=0;
+  for(const [ch,ls] of GEOGRAPHY) {
+    for(const title of ls) {
+      n++;
+      if(id==='g'+String(n).padStart(2,'0'))return {
+        id,title,chapter:ch,subject:'geography'
+      }
+    }
+  }
+  return null
+}
+function done(id) {
+  return !!JSON.parse(localStorage.getItem('hls6_done')||'{}')[id]
+}
+function doneCount() {
+  let n=0;
+  for(let i=1;
+  i<=20;
+  i++)if(done('h'+String(i).padStart(2,'0')))n++;
+  for(let i=1;
+  i<=30;
+  i++)if(done('g'+String(i).padStart(2,'0')))n++;
+  return n
+}
+function toast(s) {
+  const x=document.getElementById('toast');
+  x.textContent=s;
+  x.classList.add('show');
+  clearTimeout(toast.t);
+  toast.t=setTimeout(()=>x.classList.remove('show'),2200)
+}
+function modal(t,b) {
+  document.getElementById('modalTitle').textContent=t;
+  document.getElementById('modalBody').textContent=b;
+  document.getElementById('modal').classList.add('open')
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('open')
+}
+document.getElementById('modal').onclick=e=> {
+  if(e.target.id==='modal')closeModal()
+}
+;
+document.addEventListener('keydown',e=> {
+  if(e.key==='Escape')closeModal()
+}
+);
+function goHome() {
+  // Nút “Trang chủ” trên thanh trên cùng hoạt động như nút đăng xuất:
+  // quay lại màn hình đăng nhập để nhập tên/lớp khác.
+  state.user='';
+  state.page='login';
+  state.subject=null;
+  state.lesson=null;
+  state.search='';
+  state.game='match';
+  localStorage.removeItem('hls6_user');
+  render();
+}
+function login(e) {
+  e.preventDefault();
+  const n=document.getElementById('name').value.trim(),c=document.getElementById('cls').value.trim();
+  state.user=n+' – '+c;
+  localStorage.setItem('hls6_user',state.user);
+  state.page='home';
+  render()
+}
+function render() {
+  document.body.classList.toggle('login-mode',state.page==='login');
+  document.getElementById('userChip').textContent=state.user||'Khách tham quan';
+  document.getElementById('app').innerHTML=state.page==='login'?loginPage():state.page==='home'?home():state.page==='subject'?subjectPage():state.page==='lesson'?lessonPage():gamesPage()
+}
+function loginPage() {
+  return `
+    <div class="login">
+      <section class="loginbox" aria-label="Màn hình đăng nhập học liệu số 6">
+        <div class="loginlogo">🌍</div>
+        <h1>Học liệu số 6</h1>
+        <p>Lịch sử và Địa lí 6 – học tập qua nội dung, hình ảnh, mô hình và trò chơi.</p>
+        <form onsubmit="login(event)">
+          <div class="field">
+            <label for="name">Họ và tên</label>
+            <input id="name" required autocomplete="name" placeholder="Ví dụ: Nguyễn Văn A">
+          </div>
+          <div class="field">
+            <label for="cls">Lớp</label>
+            <input id="cls" required autocomplete="off" placeholder="Ví dụ: 6A2">
+          </div>
+          <button class="primary" type="submit">Bắt đầu học tập</button>
+        </form>
+      </section>
+    </div>
+  `
+}
+/*
+ * TRANG CHỦ
+ * Các thẻ Lịch sử 6, Địa lí 6 và Trò chơi đều có thể bấm ở bất kỳ vị trí nào.
+ * Không cần bấm đúng vào nút bên trong thẻ.
+ */
+function home() {
+  const d = doneCount();
+  const percent = Math.round((d / 50) * 100);
+
+  return `
+    <div class="page">
+      <section class="hero">
+        <div>
+          <h1>Chào mừng đến với Học liệu số 6 👋</h1>
+          <p>
+            Không gian học tập Lịch sử và Địa lí 6 với nội dung cốt lõi,
+            học liệu trực quan, bài tập tương tác và trò chơi.
+          </p>
+        </div>
+        <div class="orb">🌍</div>
+      </section>
+
+      <div class="stats">
+        <div class="stat">
+          <strong>20</strong>
+          <span>BÀI LỊCH SỬ</span>
+        </div>
+        <div class="stat">
+          <strong>30</strong>
+          <span>BÀI ĐỊA LÍ</span>
+        </div>
+        <div class="stat">
+          <strong>3</strong>
+          <span>KHU VỰC</span>
+        </div>
+        <div class="stat">
+          <strong>${d}/50</strong>
+          <span>ĐÃ HOÀN THÀNH</span>
+        </div>
+      </div>
+
+      <div class="cards">
+        <article
+          class="card history home-clickable"
+          role="button"
+          tabindex="0"
+          aria-label="Mở Lịch sử 6"
+          onclick="subject('history')"
+          onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();subject('history')}"
+        >
+          <div class="ico">🏛️</div>
+          <h2>Lịch sử 6</h2>
+          <p>
+            Khám phá xã hội nguyên thủy, các nền văn minh, Đông Nam Á
+            và lịch sử Việt Nam đến đầu thế kỉ X.
+          </p>
+          <button onclick="event.stopPropagation();subject('history')">
+            Vào Lịch sử →
+          </button>
+        </article>
+
+        <article
+          class="card geo home-clickable"
+          role="button"
+          tabindex="0"
+          aria-label="Mở Địa lí 6"
+          onclick="subject('geography')"
+          onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();subject('geography')}"
+        >
+          <div class="ico">🌎</div>
+          <h2>Địa lí 6</h2>
+          <p>
+            Tìm hiểu Trái Đất, bản đồ, khí hậu, nước, đất, sinh vật,
+            dân cư và thiên nhiên.
+          </p>
+          <button onclick="event.stopPropagation();subject('geography')">
+            Vào Địa lí →
+          </button>
+        </article>
+
+        <article
+          class="card games home-clickable"
+          role="button"
+          tabindex="0"
+          aria-label="Mở Trò chơi"
+          onclick="games()"
+          onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();games()}"
+        >
+          <div class="ico">🎮</div>
+          <h2>Trò chơi</h2>
+          <p>
+            Ghép cặp, dòng thời gian và câu hỏi nhanh giúp củng cố
+            kiến thức sau bài học.
+          </p>
+          <button onclick="event.stopPropagation();games()">
+            Vào trò chơi →
+          </button>
+        </article>
+      </div>
+
+      <div class="panel" style="margin-top:21px">
+        <h2>📊 Tiến độ học tập</h2>
+        <div
+          style="display:flex;justify-content:space-between;font-weight:800;font-size:13px"
+        >
+          <span>${d}/50 bài</span>
+          <span>${percent}%</span>
+        </div>
+        <div class="progress">
+          <i style="width:${percent}%"></i>
+        </div>
+      </div>
+    </div>
+  `;
+}
+function subject(s) {
+  state.subject=s;
+  state.search='';
+  state.page='subject';
+  render()
+}
+function subjectPage() {
+  const data=list(state.subject),title=state.subject==='history'?'🏛️ Lịch sử 6':'🌎 Địa lí 6';
+  const theme=state.subject==='history'?'history-theme':'geo-theme';
+  let n=0;
+  const chapters=data.map((x,ci)=> {
+    const lessons=x[1].map(t=>( {
+      t,id:(state.subject==='history'?'h':'g')+String(++n).padStart(2,'0')
+    }
+    ));
+    return `<section class="chapter search-chapter"><div class="chhead"><span>${x[0]}</span><span>📚</span></div><div class="lessons">${lessons.map(x=>`<button class="lesson search-item" data-title="${esc(x.t.toLowerCase())}" onclick="openLesson('${x.id}')"><span class="num">${x.id.slice(1)}</span><span class="lname">${esc(x.t)}</span>${done(x.id)?'<span class="done">✓</span>':''}</button>`).join('')}</div></section>`;
+  }
+  ).join('');
+  return `<div class="page subject-page ${theme}"><div class="subject-inner"><div class="head"><div><h1>${title}</h1><p>Chọn một bài để học hoặc nhập từ khóa để tìm nhanh.</p></div><button class="back" onclick="goHome()">← Quay lại</button></div>
+ <div class="search-box"><div class="search-input-wrap"><input id="lessonSearch" class="search" value="${esc(state.search)}" oninput="liveSearch(this.value)" onkeydown="if(event.key==='Enter'){runSearch()}" placeholder="🔎 Tìm tên bài học..." autocomplete="off"><button class="search-clear" type="button" onclick="clearSearch()" title="Xóa tìm kiếm">×</button></div><button class="search-submit" type="button" onclick="runSearch()">🔍 Tìm kiếm</button></div>
+ <div class="search-note" id="searchNote">💡 Gõ tới đâu, kết quả lọc tới đó.</div>
+ <div id="lessonResults"><div class="search-result-title">📚 Danh sách bài học</div>${chapters}</div></div></div>`
+}
+function liveSearch(value) {
+  state.search=value;
+  const q=value.trim().toLowerCase();
+  const items=document.querySelectorAll('.search-item');
+  const chapters=document.querySelectorAll('.search-chapter');
+  let count=0;
+  items.forEach(item=> {
+    const ok=!q || item.dataset.title.includes(q);
+    item.style.display=ok?'flex':'none';
+    if(ok)count++;
+  }
+  );
+  chapters.forEach(ch=> {
+    const visible=[...ch.querySelectorAll('.search-item')].some(item=>item.style.display!=='none');
+    ch.style.display=visible?'block':'none';
+  }
+  );
+  const note=document.getElementById('searchNote');
+  if(note) note.textContent=q?`🔎 Tìm thấy ${count} bài phù hợp với “${value}”. Bạn có thể bấm vào bài ngay hoặc tiếp tục gõ để lọc thêm.`:'💡 Gõ tới đâu, kết quả lọc tới đó. Bạn vẫn có thể tiếp tục gõ mà không cần bấm lại vào ô tìm kiếm.';
+}
+function runSearch() {
+  const input=document.getElementById('lessonSearch');
+  if(!input)return;
+  state.search=input.value;
+  liveSearch(input.value);
+  const results=document.getElementById('lessonResults');
+  if(results) results.scrollIntoView( {
+    behavior:'smooth',block:'start'
+  }
+  );
+  const count=document.querySelectorAll('.search-item:not([style*="display: none"])').length;
+  toast(count?`Đã lọc ${count} bài học ✓`:'Không tìm thấy bài học phù hợp.');
+  input.focus();
+}
+function clearSearch() {
+  const input=document.getElementById('lessonSearch');
+  if(!input)return;
+  input.value='';
+  state.search='';
+  liveSearch('');
+  input.focus();
+}
+function openLesson(id) {
+  state.lesson=id;
+  state.page='lesson';
+  render()
+}
+function icon(id) {
+  if(['g06','g07','g08','g10'].includes(id))return '🌍';
+  if(id==='g12')return '🌋';
+  if(id==='g19')return '💧';
+  if(id==='g24')return '🌳';
+  if(id==='h07')return '🏺';
+  if(id==='h14')return '🥁';
+  if(id==='h16')return '⚔️';
+  if(id==='h18')return '🛡️';
+  if(id==='h19')return '🛕';
+  return id[0]==='h'?'📜':'🗺️'
+}
+function model(id) {
+  if(['g06','g07','g08'].includes(id))return `<div class="model"><div class="earth"></div><div class="caption">Mô hình trực quan Trái Đất – có thể nâng cấp thành 3D riêng cho bài.</div></div>`;
+  if(id==='g10')return `<div class="model"><div class="layers"></div><div class="caption">Mô hình cắt lớp: vỏ – man-ti – nhân.</div></div>`;
+  return `<div class="model"><div style="font-size:78px">${icon(id)}</div><div class="caption">Mô hình / học liệu trực quan của bài học</div></div>`
+}
+function lessonPage() {
+  const x=info(state.lesson),c=CONTENT[state.lesson]|| {
+    goals:['Nắm được nội dung trọng tâm của bài học.','Biết vận dụng kiến thức vào hoạt động học tập.'],sections:[['Nội dung cốt lõi','Phần nội dung chi tiết của bài này có thể được chỉnh trực tiếp trong đối tượng CONTENT ở đầu phần JavaScript.']],resource:'Học liệu trực quan phù hợp với chủ đề.'
+  }
+  ;
+  return `<div class="page lesson-page ${x.subject==='history'?'history-theme':'geo-theme'}"><div class="lessonhead"><span class="tag">${x.subject==='history'?'LỊCH SỬ 6':'ĐỊA LÍ 6'} • ${esc(x.chapter)}</span><h1>${icon(x.id)} ${esc(x.title)}</h1><p>${done(x.id)?'✓ Bài đã hoàn thành.':'Hãy học nội dung và hoàn thành hoạt động bên dưới.'}</p></div><div class="layout"><div><section class="panel"><h2>🎯 Mục tiêu bài học</h2><ul class="goals">${c.goals.map(g=>`<li>${esc(g)}</li>`).join('')}</ul></section><section class="panel"><h2>📖 Nội dung cốt lõi</h2>${c.sections.map(s=>`<div class="section"><h3>${esc(s[0])}</h3><p>${esc(s[1])}</p></div>`).join('')}</section><section class="panel"><h2>🧩 Bài tập tương tác</h2>${c.quiz?quiz(c.quiz):`<div class="resource"><b>1. Em hãy nêu những nội dung quan trọng nhất của bài.</b><small>Trình bày bằng 2–3 ý ngắn gọn.</small></div><div class="resource"><b>2. Em có thể liên hệ kiến thức của bài với ví dụ nào?</b><small>Hãy đưa ra một ví dụ cụ thể.</small></div>`}</section><div class="actionrow"><button class="action primary2" onclick="complete('${x.id}')">✓ Đánh dấu hoàn thành</button><button class="action light" onclick="subject('${x.subject}')">← Danh sách bài</button></div></div><aside><section class="panel"><h2>🖼️ Học liệu trực quan</h2><div class="media">${icon(x.id)}</div><div class="resource"><b>${esc(c.resource)}</b><small>Có thể thay bằng ảnh, bản đồ, video hoặc mô hình chuyên biệt.</small></div></section><section class="panel"><h2>🧊 Mô hình / trực quan hóa</h2>${model(x.id)}</section><section class="panel"><h2>📈 Tiến độ</h2><b>${done(x.id)?'Đã hoàn thành ✓':'Chưa hoàn thành'}</b><div class="progress"><i style="width:${done(x.id)?100:0}%"></i></div></section></aside></div></div>`
+}
+function quiz(q) {
+  return `<div class="quizq">${esc(q[0])}</div>${q[1].map((o,i)=>`<button class="opt" onclick="answer(this,${i},${q[2]})">${esc(o)}</button>`).join('')}<div class="explain" id="qexp" style="display:none">Đáp án đúng đã được tô xanh. Hãy đọc lại nội dung bài để củng cố kiến thức.</div>`
+}
+function answer(btn,i,a) {
+  const box=btn.parentElement;
+  box.querySelectorAll('.opt').forEach((b,j)=> {
+    b.disabled=true;
+    if(j===a)b.classList.add('correct');
+    else if(j===i)b.classList.add('wrong')
+  }
+  );
+  box.querySelector('#qexp').style.display='block';
+  toast(i===a?'Chính xác! 🎉':'Chưa đúng – hãy xem lại phần nội dung nhé.');
+}
+function complete(id) {
+  const p=JSON.parse(localStorage.getItem('hls6_done')||'{}');
+  p[id]=true;
+  localStorage.setItem('hls6_done',JSON.stringify(p));
+  toast('Đã lưu tiến độ ✓');
+  setTimeout(render,300)
+}
+const pairs=[['Hai Bà Trưng','Khởi nghĩa năm 40'],['Ngô Quyền','Bạch Đằng năm 938'],['Trái Đất','Hành tinh của hệ Mặt Trời'],['Vỏ Trái Đất','Lớp ngoài cùng'],['Thủy quyển','Toàn bộ nước trên Trái Đất'],['Rừng nhiệt đới','Nền nhiệt cao, mưa nhiều']];
+function games() {
+  state.page='games';
+  state.game='match';
+  newMatch();
+}
+function newMatch() {
+  match.cards=[];
+  pairs.forEach((p,i)=> {
+    match.cards.push( {
+      pair:i,text:p[0]
+    }
+    );
+    match.cards.push( {
+      pair:i,text:p[1]
+    }
+    )
+  }
+  );
+  match.cards.sort(()=>Math.random()-.5);
+  match.selected=[];
+  match.locked=false;
+  render()
+}
+function gamesPage() {
+  return `<div class="page"><div class="head"><div><h1>🎮 Trò chơi học tập</h1><p>Học qua tương tác và củng cố kiến thức.</p></div><button class="back" onclick="goHome()">← Trang chủ</button></div><div class="games-tabs"><button class="tab ${state.game==='match'?'active':''}" onclick="state.game='match';render()">🧩 Ghép cặp</button><button class="tab ${state.game==='timeline'?'active':''}" onclick="state.game='timeline';render()">🗓️ Dòng thời gian</button><button class="tab ${state.game==='quick'?'active':''}" onclick="state.game='quick';render()">⚡ Câu hỏi nhanh</button></div>${state.game==='match'?matchPage():state.game==='timeline'?timelinePage():quickPage()}</div>`
+}
+function matchPage() {
+  const good=match.cards.filter(c=>c.matched).length/2;
+  return `<section class="panel"><h2>🧩 Ghép cặp kiến thức</h2><p style="color:#667085;line-height:1.6">Chọn 2 thẻ. Đúng → <b>xanh và giữ nguyên</b>. Sai → <b>đỏ</b> rồi tự trở lại để chọn lại.</p><b>Đã ghép: ${good}/${pairs.length}</b><div class="matchgrid" style="margin-top:18px">${match.cards.map((c,i)=>`<button class="mcard ${c.selected?'selected':''} ${c.matched?'matched':''} ${c.wrong?'wrong':''}" ${c.matched||match.locked?'disabled':''} onclick="pick(${i})">${esc(c.text)}</button>`).join('')}</div><div class="actionrow" style="margin-top:18px"><button class="action light" onclick="newMatch()">🔄 Chơi lại</button></div></section>`
+}
+function pick(i) {
+  if(match.locked)return;
+  const c=match.cards[i];
+  if(c.matched||c.selected)return;
+  c.selected=true;
+  match.selected.push(i);
+  render();
+  if(match.selected.length===2) {
+    match.locked=true;
+    const a=match.cards[match.selected[0]],b=match.cards[match.selected[1]];
+    if(a.pair===b.pair) {
+      a.matched=b.matched=true;
+      match.selected=[];
+      match.locked=false;
+      toast('Ghép đúng! 🎉');
+      render()
+    }
+    else {
+      a.wrong=b.wrong=true;
+      render();
+      setTimeout(()=> {
+        a.selected=b.selected=false;
+        a.wrong=b.wrong=false;
+        match.selected=[];
+        match.locked=false;
+        render()
+      }
+      ,700)
+    }
+  }
+}
+function timelinePage() {
+  return `<section class="panel"><h2>🗓️ Dòng thời gian nhanh</h2><div class="timeline"><div class="time"><div class="year">40</div><div class="ttext"><b>Khởi nghĩa Hai Bà Trưng</b><br>Cuộc khởi nghĩa tiêu biểu chống chính quyền đô hộ.</div></div><div class="time"><div class="year">542</div><div class="ttext"><b>Khởi nghĩa Lý Bí</b><br>Gắn với sự thành lập nhà nước Vạn Xuân.</div></div><div class="time"><div class="year">722</div><div class="ttext"><b>Khởi nghĩa Mai Thúc Loan</b><br>Một cuộc đấu tranh lớn ở thế kỉ VIII.</div></div><div class="time"><div class="year">938</div><div class="ttext"><b>Chiến thắng Bạch Đằng</b><br>Ngô Quyền đánh bại quân Nam Hán.</div></div></div></section>`
+}
+function quickPage() {
+  return `<section class="panel"><h2>⚡ Câu hỏi nhanh</h2>${[['Trái Đất chuyển động quanh đối tượng nào?',['Mặt Trời','Mặt Trăng','Sao Hỏa','Sao Kim']],['Lớp nào nằm ngoài cùng trong ba lớp chính của Trái Đất?',['Vỏ Trái Đất','Man-ti','Nhân','Không có lớp nào']],['Thủy quyển là gì?',['Toàn bộ nước trên Trái Đất','Chỉ nước biển','Chỉ nước sông','Chỉ nước ngầm']]].map((q,k)=>`<div class="resource"><div class="quizq">${k+1}. ${q[0]}</div>${q[1].map((o,i)=>`<button class="opt" onclick="qa(this,${i},0)">${o}</button>`).join('')}</div>`).join('')}</section>`
+}
+function qa(b,i,a) {
+  const box=b.parentElement;
+  box.querySelectorAll('.opt').forEach((x,j)=> {
+    x.disabled=true;
+    if(j===a)x.classList.add('correct');
+    else if(j===i)x.classList.add('wrong')
+  }
+  );
+  toast(i===a?'Chính xác! 🎉':'Chưa đúng!')
+}
+render();
+</script>
+</body>
+</html>
